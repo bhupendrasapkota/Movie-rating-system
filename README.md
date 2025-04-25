@@ -75,7 +75,7 @@ A sophisticated web-based movie rating application that allows users to discover
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/Movie-rating-system.git
+   git clone https://github.com/bhupendrasapkota/Movie-rating-system.git
    cd Movie-rating-system
    ```
 
@@ -166,24 +166,5 @@ Movie-rating-system/
 3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👥 Team
-
-- Developer Team at IIC
-- Project Supervisor: Department of Computer Science
-- Contributors: See [Contributors](https://github.com/yourusername/Movie-rating-system/contributors)
-
-## 📞 Support
-
-For support and queries:
-
-- Create an issue in the repository
-- Email: support@movieratingsystem.com
-
----
 
 Built with ❤️ by the Movie Rating System Team
