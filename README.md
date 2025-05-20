@@ -2,7 +2,7 @@
 
 A sophisticated web-based movie rating application that allows users to discover, rate, and review movies while maintaining their personal watchlists. Built with Java EE and modern web technologies.
 
-## ✨ Key Features
+## ✨ Key Feature
 
 - **User Management**
 
