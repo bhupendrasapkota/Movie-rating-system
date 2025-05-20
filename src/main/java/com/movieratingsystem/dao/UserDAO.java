@@ -4,6 +4,7 @@ import com.movieratingsystem.models.UserModel;
 import java.util.List;
 
 public interface UserDAO {
+
     UserModel getUserById(int id);
     UserModel getUserByEmail(String email);
     List<UserModel> getAllUsers();
@@ -16,4 +17,5 @@ public interface UserDAO {
     boolean updatePassword(int userId, String newPassword);
     boolean deleteUser(int id);
     byte[] getUserImage(int userId);
+
 }

@@ -1,3 +1,8 @@
+CREATE DATABASE IF NOT EXISTS movieratingdatabase;
+
+USE movieratingdatabase;
+
+
 create table genres
 (
     genre_id    int auto_increment
@@ -119,4 +124,3 @@ create index movie_id
 
 create index user_id
     on watchlist (user_id);
-

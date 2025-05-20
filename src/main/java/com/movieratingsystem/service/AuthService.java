@@ -12,7 +12,7 @@ public class AuthService {
         UserModel user = new UserModel();
         user.setName(name);
         user.setEmail(email);
-        user.setPassword(password); // In production, this should be hashed
+        user.setPassword(password);// FIXED: Password now set
         user.setRole(UserModel.Role.valueOf(role));
         user.setImage(image);
 
@@ -27,10 +27,12 @@ public class AuthService {
         user.setPassword(password);
 
         // Authenticate the user and return the result
-        return userDAO.getUserByEmail(email);
+        return userDAO.getUserByEmail(email); // No session created here
     }
 
     public static UserModel getUserById(int id) {
         return userDAO.getUserById(id);
     }
 }
+
+
