@@ -20,6 +20,6 @@ public class LogoutController extends HttpServlet {
         }
 
         // Redirect to home page
-        response.sendRedirect(request.getContextPath() + "/");
+        response.sendRedirect(request.getContextPath()+"/");
     }
 }

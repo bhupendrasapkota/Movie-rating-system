@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebFilter(filterName = "AuthenticationFilter", urlPatterns = {"/profile/*", "/watchlist/*", "/rating/*", "/review/*"})
+@WebFilter(filterName = "AuthenticationFilter", urlPatterns = {"/profile/", "/watchlist/", "/rating/", "/review/"})
 public class AuthenticationFilter implements Filter {
 
     @Override
@@ -37,6 +37,7 @@ public class AuthenticationFilter implements Filter {
     }
 
     @Override
-    public void destroy() {
+    public void destroy(){
+
     }
 }
