@@ -1,21 +1,26 @@
 package com.movieratingsystem.utils;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.Properties;
+import java.io.InputStream;
 
 public class DBUtil {
-    private static final String URL = "jdbc:mysql://localhost:3306/MovieRatingDatabase";
-    private static final String USER = "root";
-    private static final String PASSWORD = "";
+    private static final String URL;
+    private static final String USER;
+    private static final String PASSWORD;
 
     static {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            throw new ExceptionInInitializerError("Failed to load database driver: " + e.getMessage());
+        try (InputStream input = DBUtil.class.getClassLoader().getResourceAsStream("application.properties")) {
+            Properties prop = new Properties();
+            prop.load(input);
+
+            URL = prop.getProperty("db.url");
+            USER = prop.getProperty("db.username");
+            PASSWORD = prop.getProperty("db.password");
+
+            Class.forName(prop.getProperty("db.driver"));
+        } catch (Exception e) {
+            throw new ExceptionInInitializerError("Failed to load DB config: " + e.getMessage());
         }
     }
 
