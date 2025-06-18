@@ -1,18 +1,18 @@
 #!/bin/bash
 
-# 1. Download Tomcat 9
+# Download and extract Tomcat
 curl -O https://downloads.apache.org/tomcat/tomcat-9/v9.0.85/bin/apache-tomcat-9.0.85.tar.gz
 tar -xzf apache-tomcat-9.0.85.tar.gz
 mv apache-tomcat-9.0.85 tomcat
 
-# 2. Remove default apps
+# Clean default Tomcat apps
 rm -rf tomcat/webapps/*
 
-# 3. Build the WAR using Maven Wrapper
+# Build the WAR using Maven
 ./mvnw clean package
 
-# 4. Copy the WAR to Tomcat's webapps folder
+# Copy the generated WAR file into Tomcat
 cp target/*.war tomcat/webapps/ROOT.war
 
-# 5. Start Tomcat
+# Start Tomcat server
 tomcat/bin/catalina.sh run
