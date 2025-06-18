@@ -1,12 +1,13 @@
+# Use official Tomcat base image
 FROM tomcat:9.0-jdk17
 
-# Remove default Tomcat apps
+# Remove default Tomcat webapps
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Copy your WAR into Tomcat webapps directory
+# Copy your WAR file into Tomcat webapps as ROOT.war
 COPY target/MovieRatingSystem.war /usr/local/tomcat/webapps/ROOT.war
 
-# Expose the default Tomcat port
+# Expose port 8080 (default)
 EXPOSE 8080
 
 # Start Tomcat
